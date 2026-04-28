@@ -21,36 +21,35 @@
             color: #3e2723;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
-        /* Header 視覺 */
         header {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 80px 20px;
-            clip-path: ellipse(150% 100% at 50% 0%);
+            padding: 60px 20px;
+            /* 修正遮擋問題：移除激進的 clip-path */
+            border-bottom: 5px solid var(--maple-red);
         }
 
-        h1 { font-family: 'Noto Serif TC', serif; font-size: 2.5rem; margin-bottom: 10px; }
+        h1 { font-family: 'Noto Serif TC', serif; font-size: 2.2rem; margin: 0 0 10px 0; }
 
-        .container { max-width: 900px; margin: -50px auto 50px; padding: 0 20px; }
+        .container { max-width: 850px; margin: 30px auto; padding: 0 20px; }
 
-        /* 卡片設計 */
         .day-section {
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 35px;
             overflow: hidden;
-            border: 1px solid #eee;
         }
 
         .day-banner {
-            padding: 20px 30px;
+            padding: 15px 25px;
             background: linear-gradient(135deg, var(--maple-red), var(--deep-orange));
             color: white;
             display: flex;
@@ -58,69 +57,69 @@
             align-items: center;
         }
 
-        .day-banner h2 { margin: 0; font-size: 1.5rem; }
+        .day-banner h2 { margin: 0; font-size: 1.3rem; }
 
-        .content { padding: 30px; }
+        .content { padding: 25px; }
 
         .stay-info {
-            background: #fff5f0;
-            border: 1px solid var(--gold);
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 25px;
+            background: #fff9f5;
+            border-left: 5px solid var(--gold);
+            padding: 12px 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
+            font-weight: 500;
         }
 
-        .stay-info i { color: var(--gold); font-size: 1.5rem; margin-right: 15px; }
+        .stay-info i { color: var(--gold); margin-right: 12px; font-size: 1.2rem; }
 
-        /* 地點列表 */
         .spot {
             display: flex;
-            margin-bottom: 25px;
-            border-bottom: 1px solid #f0f0f0;
-            padding-bottom: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #fdf2f2;
         }
 
-        .spot:last-child { border: none; }
+        .spot:last-child { border: none; margin-bottom: 0; }
 
         .spot-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 15px;
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
             background-size: cover;
             background-position: center;
             flex-shrink: 0;
-            margin-right: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-right: 15px;
         }
 
-        .spot-detail h3 { margin: 0 0 8px 0; font-size: 1.2rem; }
+        .spot-detail h3 { margin: 0 0 5px 0; font-size: 1.1rem; color: #8d2300; }
+        .spot-detail p { margin: 0; font-size: 0.95rem; color: #5d4037; }
+
+        .btn-group { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
 
         .btn-map {
             display: inline-flex;
             align-items: center;
-            padding: 6px 14px;
+            padding: 5px 12px;
             background-color: white;
-            border: 1.5px solid var(--lake-blue);
+            border: 1px solid var(--lake-blue);
             color: var(--lake-blue);
             text-decoration: none;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-top: 8px;
-            transition: all 0.3s;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            transition: 0.2s;
         }
 
         .btn-map:hover { background-color: var(--lake-blue); color: white; }
+        .btn-map i { margin-right: 4px; }
 
-        .btn-map i { margin-right: 6px; }
-
-        footer { text-align: center; padding: 50px; color: #999; }
+        footer { text-align: center; padding: 40px; color: #888; font-size: 0.9rem; }
 
         @media (max-width: 600px) {
-            .spot { flex-direction: column; }
-            .spot-img { width: 100%; height: 150px; margin-bottom: 15px; }
-            h1 { font-size: 1.8rem; }
+            h1 { font-size: 1.6rem; }
+            .day-banner h2 { font-size: 1.1rem; }
+            .spot-img { width: 60px; height: 60px; }
         }
     </style>
 </head>
@@ -141,18 +140,18 @@
         <div class="content">
             <div class="stay-info">
                 <i class="fas fa-hotel"></i>
-                <div>
-                    <strong>入住：OMO5 函館 by 星野集團</strong><br>
-                    <a href="https://www.google.com/maps/search/?api=1&query=OMO5+Hakodate" target="_blank" class="btn-map"><i class="fas fa-location-dot"></i>開啟地圖</a>
-                </div>
+                入住：OMO5 函館 by 星野集團
             </div>
             <div class="spot">
-                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1571151596589-9d292f4460f7?auto=format&fit=crop&w=200&q=80')"></div>
+                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1571151596589-9d292f4460f7?auto=format&fit=crop&w=150&q=80')"></div>
                 <div class="spot-detail">
                     <h3>函館站前美食巡禮</h3>
-                    <p>滋養軒、根室花丸、幸運小丑漢堡。函館第一晚的味蕾饗宴。</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=滋養軒" target="_blank" class="btn-map"><i class="fas fa-map"></i> 滋養軒</a>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Lucky+Pierrot+Hakodate+Station" target="_blank" class="btn-map"><i class="fas fa-map"></i> 幸運小丑</a>
+                    <p>滋養軒拉麵、根室花丸壽司、幸運小丑漢堡。</p>
+                    <div class="btn-group">
+                        <a href="https://www.google.com/maps/search/?api=1&query=OMO5+函館" target="_blank" class="btn-map"><i class="fas fa-location-dot"></i> 飯店</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=滋養軒" target="_blank" class="btn-map"><i class="fas fa-utensils"></i> 滋養軒</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=幸運小丑漢堡+函館站前店" target="_blank" class="btn-map"><i class="fas fa-burger"></i> 幸運小丑</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -164,69 +163,27 @@
             <span>10/24 (六)</span>
         </div>
         <div class="content">
+            <div class="stay-info"><i class="fas fa-hotel"></i> 入住：OMO5 函館</div>
             <div class="spot">
-                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1542044896530-05d85be9b11a?auto=format&fit=crop&w=200&q=80')"></div>
+                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1542044896530-05d85be9b11a?auto=format&fit=crop&w=150&q=80')"></div>
                 <div class="spot-detail">
-                    <h3>五稜郭公園 & 六花亭</h3>
-                    <p>登上塔頂俯瞰楓紅交織的五角星，接著在六花亭享受玻璃屋下午茶。</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Goryokaku+Tower" target="_blank" class="btn-map"><i class="fas fa-map"></i> 五稜郭塔</a>
-                    <a href="https://www.google.com/maps/search/?api=1&query=六花亭+五稜郭店" target="_blank" class="btn-map"><i class="fas fa-map"></i> 六花亭</a>
+                    <h3>五稜郭與朝市</h3>
+                    <p>五稜郭塔看楓紅五角星，六花亭美景下午茶，朝市釣烏賊。</p>
+                    <div class="btn-group">
+                        <a href="https://www.google.com/maps/search/?api=1&query=函館朝市" target="_blank" class="btn-map">函館朝市</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=五稜郭塔" target="_blank" class="btn-map">五稜郭塔</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=六花亭+五稜郭店" target="_blank" class="btn-map">六花亭</a>
+                    </div>
                 </div>
             </div>
             <div class="spot">
-                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80')"></div>
+                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=150&q=80')"></div>
                 <div class="spot-detail">
                     <h3>香雪園 (見晴公園)</h3>
-                    <p>北海道唯一文化財庭園，欣賞令人屏息的 MOMI-G 節夜楓點燈。</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Kosyetsuen+Miharashi+Park" target="_blank" class="btn-map"><i class="fas fa-location-dot"></i> 前往香雪園</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="day-section">
-        <div class="day-banner" style="background: linear-gradient(135deg, #2c3e50, #2980B9);">
-            <h2>Day 3 洞爺湖花火</h2>
-            <span>10/25 (日)</span>
-        </div>
-        <div class="content">
-            <div class="stay-info">
-                <i class="fas fa-hot-tub-person"></i>
-                <div>
-                    <strong>入住：洞爺湖 乃之風度假酒店</strong><br>
-                    <a href="https://www.google.com/maps/search/?api=1&query=The+Lake+view+TOYA+Nonokaze+Resort" target="_blank" class="btn-map"><i class="fas fa-location-dot"></i> 飯店導航</a>
-                </div>
-            </div>
-            <div class="spot">
-                <div class="spot-detail">
-                    <h3>✨ 20:45 洞爺湖煙火大會</h3>
-                    <p>在房間或頂露天風呂，欣賞年度最後的湖面花火，感受極致浪漫。</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="day-section">
-        <div class="day-banner" style="background: linear-gradient(135deg, var(--gold), var(--deep-orange));">
-            <h2>Day 4-5 湖光山色</h2>
-            <span>10/26-27</span>
-        </div>
-        <div class="content">
-            <div class="spot">
-                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=200&q=80')"></div>
-                <div class="spot-detail">
-                    <h3>有珠山纜車 & Lake Hill Farm</h3>
-                    <p>俯瞰火山壯麗奇景，下午在絕美草皮享用手工 Gelato。</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Mt+Usu+Ropeway" target="_blank" class="btn-map"><i class="fas fa-map"></i> 纜車站</a>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Lake+Hill+Farm" target="_blank" class="btn-map"><i class="fas fa-map"></i> 冰淇淋農場</a>
-                </div>
-            </div>
-            <div class="spot">
-                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=200&q=80')"></div>
-                <div class="spot-detail">
-                    <h3>函館山百萬鑽石夜景</h3>
-                    <p>重返函館，搭乘纜車登上頂峰，飽覽世界三大夜景之一。</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Mt+Hakodate+Ropeway" target="_blank" class="btn-map"><i class="fas fa-location-dot"></i> 纜車站入口</a>
+                    <p>欣賞國定文化遺產庭園，觀賞 MOMI-G 節夜楓點燈。</p>
+                    <div class="btn-group">
+                        <a href="https://www.google.com/maps/search/?api=1&query=香雪園" target="_blank" class="btn-map"><i class="fas fa-moon"></i> 夜楓導航</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -234,16 +191,83 @@
 
     <div class="day-section">
         <div class="day-banner">
-            <h2>Day 6 歲月靜好．賦歸</h2>
+            <h2>Day 3 洞爺湖花火</h2>
+            <span>10/25 (日)</span>
+        </div>
+        <div class="content">
+            <div class="stay-info"><i class="fas fa-hot-tub"></i> 入住：洞爺湖乃之風度假酒店</div>
+            <div class="spot">
+                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=150&q=80')"></div>
+                <div class="spot-detail">
+                    <h3>金森倉庫與浪漫花火</h3>
+                    <p>早晨逛紅磚倉庫，下午前往洞爺湖，晚間 20:45 欣賞湖面煙火。</p>
+                    <div class="btn-group">
+                        <a href="https://www.google.com/maps/search/?api=1&query=金森紅磚倉庫" target="_blank" class="btn-map">金森倉庫</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=乃之風度假酒店" target="_blank" class="btn-map">乃之風飯店</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-section">
+        <div class="day-banner">
+            <h2>Day 4 火山與秋色步道</h2>
+            <span>10/26 (一)</span>
+        </div>
+        <div class="content">
+            <div class="stay-info"><i class="fas fa-hot-tub"></i> 入住：洞爺湖乃之風度假酒店</div>
+            <div class="spot">
+                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=150&q=80')"></div>
+                <div class="spot-detail">
+                    <h3>有珠山與昭和新山</h3>
+                    <p>搭乘纜車俯瞰洞爺湖全景，走一段湖畔藝術散步道。</p>
+                    <div class="btn-group">
+                        <a href="https://www.google.com/maps/search/?api=1&query=有珠山纜車" target="_blank" class="btn-map">有珠山纜車</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=昭和新山" target="_blank" class="btn-map">昭和新山</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-section">
+        <div class="day-banner">
+            <h2>Day 5 絕美展望與夜景</h2>
+            <span>10/27 (二)</span>
+        </div>
+        <div class="content">
+            <div class="stay-info"><i class="fas fa-hotel"></i> 入住：OMO5 函館</div>
+            <div class="spot">
+                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=150&q=80')"></div>
+                <div class="spot-detail">
+                    <h3>筒倉展望台與百萬夜景</h3>
+                    <p>在 Lake Hill Farm 吃冰淇淋，傍晚回函館山看鑽石夜景。</p>
+                    <div class="btn-group">
+                        <a href="https://www.google.com/maps/search/?api=1&query=筒倉展望台" target="_blank" class="btn-map">筒倉展望台</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Lake+Hill+Farm" target="_blank" class="btn-map">Lake Hill Farm</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=函館山纜車" target="_blank" class="btn-map">函館山纜車</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-section">
+        <div class="day-banner">
+            <h2>Day 6 元町散策與賦歸</h2>
             <span>10/28 (三)</span>
         </div>
         <div class="content">
             <div class="spot">
+                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1520264215313-09415f6291a9?auto=format&fit=crop&w=150&q=80')"></div>
                 <div class="spot-detail">
-                    <h3>元町區散策 (八幡坂)</h3>
-                    <p>在最美街道拍下通往大海的風景，為旅程畫下完美句點。</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Hachiman-zaka+Slope" target="_blank" class="btn-map"><i class="fas fa-map"></i> 八幡坂</a>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Hakodate+Airport" target="_blank" class="btn-map"><i class="fas fa-plane"></i> 函館機場</a>
+                    <h3>元町區異國風景</h3>
+                    <p>八幡坂、大三坂，在充滿楓紅的街道慢行。15:30 抵達機場。</p>
+                    <div class="btn-group">
+                        <a href="https://www.google.com/maps/search/?api=1&query=八幡坂" target="_blank" class="btn-map">八幡坂</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=函館機場" target="_blank" class="btn-map">函館機場</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -252,7 +276,7 @@
 </div>
 
 <footer>
-    <p>🍁 一場關於秋天的慢活紀錄 🍁</p>
+    <p>🍁 Wish you a wonderful journey in Hokkaido 🍁</p>
 </footer>
 
 </body>
