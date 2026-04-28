@@ -1,135 +1,239 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>函館・洞爺湖 追楓慢活六天五夜</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-body {
-  font-family: 'Noto Sans TC', sans-serif;
-  margin:0;
-  background: linear-gradient(to bottom,#fff,#f7f7f7);
-  color:#333;
-}
-header {
-  background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
-  background-size:cover;
-  background-position:center;
-  color:white;
-  text-align:center;
-  padding:80px 20px;
-}
-header h1 { font-size:36px; margin-bottom:10px; }
-header p { font-size:18px; opacity:0.9; }
-.container {
-  max-width:1100px;
-  margin:-40px auto 30px;
-  padding:0 15px;
-}
-.day {
-  background:white;
-  border-radius:20px;
-  padding:25px;
-  margin-bottom:25px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.2s;
-}
-.day:hover { transform: translateY(-5px); }
-.day h2 {
-  color:#b22222;
-  margin-bottom:15px;
-}
-.item {
-  margin-bottom:10px;
-  line-height:1.6;
-}
-.tag {
-  display:inline-block;
-  background:#ffe4e1;
-  padding:5px 12px;
-  border-radius:10px;
-  margin-right:6px;
-  font-size:12px;
-}
-.highlight {
-  background:#fff8f0;
-  padding:10px;
-  border-radius:10px;
-  margin-top:10px;
-}
-footer {
-  text-align:center;
-  padding:30px;
-  color:#777;
-  font-size:14px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍁 函館・洞爺湖【追楓慢活】</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --autumn-red: #b22222;
+            --autumn-orange: #d2691e;
+            --autumn-gold: #daa520;
+            --bg-color: #fdf5e6;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542044896530-05d85be9b11a?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .day-card {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border-left: 8px solid var(--autumn-orange);
+        }
+
+        .day-header {
+            background-color: #fffaf0;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .day-header h2 {
+            margin: 0;
+            color: var(--autumn-red);
+            font-size: 1.4rem;
+        }
+
+        .day-content {
+            padding: 20px;
+        }
+
+        .accommodation {
+            background-color: #fff5f5;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            border: 1px dashed var(--autumn-red);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        li i {
+            margin-top: 5px;
+            margin-right: 12px;
+            color: var(--autumn-orange);
+            width: 20px;
+        }
+
+        .location-link {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: bold;
+            border-bottom: 1px solid var(--autumn-gold);
+            transition: 0.3s;
+        }
+
+        .location-link:hover {
+            color: var(--autumn-red);
+            background-color: #fff9e6;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 40px 15px; }
+            .day-header h2 { font-size: 1.2rem; }
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <h1>🍁 函館・洞爺湖 追楓慢活之旅</h1>
-  <p>2025/10/23 – 10/28｜六天五夜｜家人共享版</p>
+    <h1>🍁 函館・洞爺湖</h1>
+    <p>2026.10.23 - 10.28 | 追楓慢活六日遊</p>
 </header>
 
 <div class="container">
 
-<div class="day">
-<h2>Day 1｜抵達函館 ✈️</h2>
-<div class="item"><span class="tag">航班</span>12:00 TPE → 16:45 HKD（星宇 JX860）</div>
-<div class="item"><span class="tag">住宿</span>OMO5 Hakodate（18:30入住）</div>
-<div class="item"><span class="tag">晚餐</span>拉麵 / 壽司 / 幸運小丑漢堡</div>
-<div class="item"><span class="tag">補給</span>MaxValu 超市</div>
-<div class="highlight">✔ 輕鬆第一天，避免排太滿，讓長輩適應氣溫</div>
-</div>
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 1：啟程．函館夜食</h2>
+            <span>10/23 (五)</span>
+        </div>
+        <div class="day-content">
+            <div class="accommodation">
+                🏠 入住：<a class="location-link" href="https://maps.app.goo.gl/yJ6M3nZ2LdYn7mGv7" target="_blank">OMO5 函館 by 星野集團</a>
+            </div>
+            <ul>
+                <li><i class="fas fa-plane"></i> 16:45 抵達函館機場 (JX860)</li>
+                <li><i class="fas fa-utensils"></i> 晚餐：<a class="location-link" href="https://maps.app.goo.gl/BAtjXvLpM9qf7B8r5" target="_blank">滋養軒</a> / <a class="location-link" href="https://maps.app.goo.gl/P3eU6k8Vf5M4U6xS9" target="_blank">根室花丸</a> / <a class="location-link" href="https://maps.app.goo.gl/G4mS6yL5QYF3n5U77" target="_blank">幸運小丑漢堡</a></li>
+                <li><i class="fas fa-shopping-cart"></i> 採買：<a class="location-link" href="https://maps.app.goo.gl/G6pS5yL5QYF3n5U77" target="_blank">MaxValu 若松店</a></li>
+            </ul>
+        </div>
+    </div>
 
-<div class="day">
-<h2>Day 2｜函館楓葉最強日 🍁</h2>
-<div class="item"><b>早上：</b>函館朝市（釣烏賊＋海鮮丼）</div>
-<div class="item"><b>中午：</b>五稜郭公園＋展望塔＋六花亭</div>
-<div class="item"><b>晚上：</b>香雪園夜楓點燈</div>
-<div class="highlight">📸 今日重點：五角星楓葉＋夜楓，非常經典</div>
-</div>
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 2：雙強楓葉精華</h2>
+            <span>10/24 (六)</span>
+        </div>
+        <div class="day-content">
+            <div class="accommodation">🏠 入住：OMO5 函館</div>
+            <ul>
+                <li><i class="fas fa-fish"></i> 早上：<a class="location-link" href="https://maps.app.goo.gl/x8T5S7XQZf4Z7f8v9" target="_blank">函館朝市</a> (釣烏賊、村上海膽)</li>
+                <li><i class="fas fa-star"></i> 中午：<a class="location-link" href="https://maps.app.goo.gl/mPjV6XQZf4Z7f8v9" target="_blank">五稜郭塔</a> ＆ <a class="location-link" href="https://maps.app.goo.gl/3fXQZf4Z7f8v9" target="_blank">六花亭五稜郭店</a></li>
+                <li><i class="fas fa-leaf"></i> 傍晚：<a class="location-link" href="https://maps.app.goo.gl/E8Wf9P3U4Z7f8v9" target="_blank">香雪園(見晴公園)</a> <span class="tag">夜楓點燈</span></li>
+            </ul>
+        </div>
+    </div>
 
-<div class="day">
-<h2>Day 3｜移動日 → 洞爺湖 ♨️</h2>
-<div class="item"><b>早上：</b>金森紅磚倉庫散步</div>
-<div class="item"><b>中午：</b>前往洞爺湖（約2hr）</div>
-<div class="item"><b>下午：</b>入住溫泉飯店（乃之風）</div>
-<div class="item"><b>晚上：</b>湖上花火 20:45</div>
-<div class="highlight">✨ 超浪漫：邊泡溫泉邊看煙火</div>
-</div>
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 3：浪漫花火之夜</h2>
+            <span>10/25 (日)</span>
+        </div>
+        <div class="day-content">
+            <div class="accommodation">
+                🏠 入住：<a class="location-link" href="https://maps.app.goo.gl/N8XQZf4Z7f8v9" target="_blank">洞爺湖 乃之風度假酒店</a>
+            </div>
+            <ul>
+                <li><i class="fas fa-store"></i> 早上：<a class="location-link" href="https://maps.app.goo.gl/r5T5S7XQZf4Z7f8v9" target="_blank">金森紅磚倉庫</a> 散步</li>
+                <li><i class="fas fa-car"></i> 中午：移動至洞爺湖 (自駕/接送)</li>
+                <li><i class="fas fa-firework"></i> 晚上：20:45 <a class="location-link" href="https://maps.app.goo.gl/q8P3U4Z7f8v9" target="_blank">洞爺湖花火大會</a></li>
+            </ul>
+        </div>
+    </div>
 
-<div class="day">
-<h2>Day 4｜火山 × 湖景慢活 🌄</h2>
-<div class="item"><b>早上：</b>飯店早餐＋放鬆</div>
-<div class="item"><b>中午：</b>有珠山纜車＋昭和新山</div>
-<div class="item"><b>下午：</b>湖畔散步拍照</div>
-<div class="highlight">✔ 行程輕鬆，適合長輩節奏</div>
-</div>
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 4：有珠火山與秋色</h2>
+            <span>10/26 (一)</span>
+        </div>
+        <div class="day-content">
+            <div class="accommodation">🏠 入住：洞爺湖 乃之風</div>
+            <ul>
+                <li><i class="fas fa-mountain"></i> 中午：<a class="location-link" href="https://maps.app.goo.gl/f8Wf9P3U4Z7f8v9" target="_blank">有珠山纜車</a> ＆ <a class="location-link" href="https://maps.app.goo.gl/w8XQZf4Z7f8v9" target="_blank">昭和新山</a></li>
+                <li><i class="fas fa-walking"></i> 下午：<a class="location-link" href="https://maps.app.goo.gl/z8P3U4Z7f8v9" target="_blank">洞爺湖畔雕刻公園</a> 散步拍照</li>
+            </ul>
+        </div>
+    </div>
 
-<div class="day">
-<h2>Day 5｜視野最強的一天 🌌</h2>
-<div class="item"><b>早上：</b>Silo 展望台</div>
-<div class="item"><b>中午：</b>Lake Hill Farm 冰淇淋</div>
-<div class="item"><b>下午：</b>返回函館</div>
-<div class="item"><b>晚上：</b>函館山百萬夜景</div>
-<div class="highlight">📷 白天湖景＋晚上夜景，一天兩個高潮</div>
-</div>
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 5：展望全景．鑽石夜景</h2>
+            <span>10/27 (二)</span>
+        </div>
+        <div class="day-content">
+            <div class="accommodation">🏠 入住：OMO5 函館</div>
+            <ul>
+                <li><i class="fas fa-camera"></i> 早上：<a class="location-link" href="https://maps.app.goo.gl/a8XQZf4Z7f8v9" target="_blank">筒倉展望台 (Silo)</a></li>
+                <li><i class="fas fa-ice-cream"></i> 中午：<a class="location-link" href="https://maps.app.goo.gl/b8P3U4Z7f8v9" target="_blank">Lake Hill Farm</a> 義式冰淇淋</li>
+                <li><i class="fas fa-moon"></i> 晚上：<a class="location-link" href="https://maps.app.goo.gl/c8Wf9P3U4Z7f8v9" target="_blank">函館山夜景</a> (建議日落前抵達)</li>
+            </ul>
+        </div>
+    </div>
 
-<div class="day">
-<h2>Day 6｜歐風街道散步 🏡</h2>
-<div class="item"><b>早上：</b>元町（八幡坂・大三坂）</div>
-<div class="item"><b>下午：</b>15:30 抵達機場</div>
-<div class="item"><b>航班：</b>18:00 → 21:40（星宇 JX861）</div>
-<div class="highlight">✔ 最後收尾輕鬆走，避免趕行程</div>
-</div>
+    <div class="day-card">
+        <div class="day-header">
+            <h2>Day 6：異國風情．賦歸</h2>
+            <span>10/28 (三)</span>
+        </div>
+        <div class="day-content">
+            <ul>
+                <li><i class="fas fa-camera-retro"></i> 早上：<a class="location-link" href="https://maps.app.goo.gl/d8XQZf4Z7f8v9" target="_blank">元町區散步</a> (八幡坂、大三坂)</li>
+                <li><i class="fas fa-shopping-bag"></i> 下午：15:30 抵達 <a class="location-link" href="https://maps.app.goo.gl/e8P3U4Z7f8v9" target="_blank">函館機場</a></li>
+                <li><i class="fas fa-plane-departure"></i> 18:00 飛機起飛返台</li>
+            </ul>
+        </div>
+    </div>
 
 </div>
 
 <footer>
-🍁 家人專屬慢活行程｜舒服走・輕鬆吃・慢慢看風景 🍁
+    <p>🍁 Wish you a colorful autumn journey 🍁</p>
 </footer>
 
 </body>
