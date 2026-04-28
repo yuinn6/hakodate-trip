@@ -4,236 +4,255 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🍁 函館・洞爺湖【追楓慢活】</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --autumn-red: #b22222;
-            --autumn-orange: #d2691e;
-            --autumn-gold: #daa520;
-            --bg-color: #fdf5e6;
-            --text-color: #333;
+            --maple-red: #C04000;
+            --deep-orange: #D35400;
+            --gold: #F39C12;
+            --lake-blue: #2980B9;
+            --bg-cream: #FFF9F2;
         }
 
         body {
-            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-cream);
+            color: #3e2723;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
 
+        /* Header 視覺 */
         header {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542044896530-05d85be9b11a?auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 60px 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            padding: 80px 20px;
+            clip-path: ellipse(150% 100% at 50% 0%);
         }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 15px;
-        }
+        h1 { font-family: 'Noto Serif TC', serif; font-size: 2.5rem; margin-bottom: 10px; }
 
-        .day-card {
+        .container { max-width: 900px; margin: -50px auto 50px; padding: 0 20px; }
+
+        /* 卡片設計 */
+        .day-section {
             background: white;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
             overflow: hidden;
-            border-left: 8px solid var(--autumn-orange);
+            border: 1px solid #eee;
         }
 
-        .day-header {
-            background-color: #fffaf0;
-            padding: 15px 20px;
-            border-bottom: 1px solid #eee;
+        .day-banner {
+            padding: 20px 30px;
+            background: linear-gradient(135deg, var(--maple-red), var(--deep-orange));
+            color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .day-header h2 {
-            margin: 0;
-            color: var(--autumn-red);
-            font-size: 1.4rem;
-        }
+        .day-banner h2 { margin: 0; font-size: 1.5rem; }
 
-        .day-content {
-            padding: 20px;
-        }
+        .content { padding: 30px; }
 
-        .accommodation {
-            background-color: #fff5f5;
-            padding: 10px 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-            border: 1px dashed var(--autumn-red);
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 15px;
+        .stay-info {
+            background: #fff5f0;
+            border: 1px solid var(--gold);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
         }
 
-        li i {
-            margin-top: 5px;
-            margin-right: 12px;
-            color: var(--autumn-orange);
-            width: 20px;
+        .stay-info i { color: var(--gold); font-size: 1.5rem; margin-right: 15px; }
+
+        /* 地點列表 */
+        .spot {
+            display: flex;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 20px;
         }
 
-        .location-link {
+        .spot:last-child { border: none; }
+
+        .spot-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+            margin-right: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .spot-detail h3 { margin: 0 0 8px 0; font-size: 1.2rem; }
+
+        .btn-map {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background-color: white;
+            border: 1.5px solid var(--lake-blue);
+            color: var(--lake-blue);
             text-decoration: none;
-            color: #2c3e50;
-            font-weight: bold;
-            border-bottom: 1px solid var(--autumn-gold);
-            transition: 0.3s;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            transition: all 0.3s;
         }
 
-        .location-link:hover {
-            color: var(--autumn-red);
-            background-color: #fff9e6;
-        }
+        .btn-map:hover { background-color: var(--lake-blue); color: white; }
 
-        .tag {
-            font-size: 0.8rem;
-            background: #eee;
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin-left: 5px;
-            vertical-align: middle;
-        }
+        .btn-map i { margin-right: 6px; }
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #777;
-            font-size: 0.9rem;
-        }
+        footer { text-align: center; padding: 50px; color: #999; }
 
         @media (max-width: 600px) {
-            header { padding: 40px 15px; }
-            .day-header h2 { font-size: 1.2rem; }
+            .spot { flex-direction: column; }
+            .spot-img { width: 100%; height: 150px; margin-bottom: 15px; }
+            h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>🍁 函館・洞爺湖</h1>
-    <p>2026.10.23 - 10.28 | 追楓慢活六日遊</p>
+    <h1>🍁 函館・洞爺湖追楓之旅</h1>
+    <p>2026.10.23 - 10.28 | 星宇航空奢華慢活</p>
 </header>
 
 <div class="container">
 
-    <div class="day-card">
-        <div class="day-header">
-            <h2>Day 1：啟程．函館夜食</h2>
+    <div class="day-section">
+        <div class="day-banner">
+            <h2>Day 1 抵達函館</h2>
             <span>10/23 (五)</span>
         </div>
-        <div class="day-content">
-            <div class="accommodation">
-                🏠 入住：<a class="location-link" href="https://maps.app.goo.gl/yJ6M3nZ2LdYn7mGv7" target="_blank">OMO5 函館 by 星野集團</a>
+        <div class="content">
+            <div class="stay-info">
+                <i class="fas fa-hotel"></i>
+                <div>
+                    <strong>入住：OMO5 函館 by 星野集團</strong><br>
+                    <a href="https://www.google.com/maps/search/?api=1&query=OMO5+Hakodate" target="_blank" class="btn-map"><i class="fas fa-location-dot"></i>開啟地圖</a>
+                </div>
             </div>
-            <ul>
-                <li><i class="fas fa-plane"></i> 16:45 抵達函館機場 (JX860)</li>
-                <li><i class="fas fa-utensils"></i> 晚餐：<a class="location-link" href="https://maps.app.goo.gl/BAtjXvLpM9qf7B8r5" target="_blank">滋養軒</a> / <a class="location-link" href="https://maps.app.goo.gl/P3eU6k8Vf5M4U6xS9" target="_blank">根室花丸</a> / <a class="location-link" href="https://maps.app.goo.gl/G4mS6yL5QYF3n5U77" target="_blank">幸運小丑漢堡</a></li>
-                <li><i class="fas fa-shopping-cart"></i> 採買：<a class="location-link" href="https://maps.app.goo.gl/G6pS5yL5QYF3n5U77" target="_blank">MaxValu 若松店</a></li>
-            </ul>
+            <div class="spot">
+                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1571151596589-9d292f4460f7?auto=format&fit=crop&w=200&q=80')"></div>
+                <div class="spot-detail">
+                    <h3>函館站前美食巡禮</h3>
+                    <p>滋養軒、根室花丸、幸運小丑漢堡。函館第一晚的味蕾饗宴。</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=滋養軒" target="_blank" class="btn-map"><i class="fas fa-map"></i> 滋養軒</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Lucky+Pierrot+Hakodate+Station" target="_blank" class="btn-map"><i class="fas fa-map"></i> 幸運小丑</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="day-card">
-        <div class="day-header">
-            <h2>Day 2：雙強楓葉精華</h2>
+    <div class="day-section">
+        <div class="day-banner">
+            <h2>Day 2 函館楓紅精華</h2>
             <span>10/24 (六)</span>
         </div>
-        <div class="day-content">
-            <div class="accommodation">🏠 入住：OMO5 函館</div>
-            <ul>
-                <li><i class="fas fa-fish"></i> 早上：<a class="location-link" href="https://maps.app.goo.gl/x8T5S7XQZf4Z7f8v9" target="_blank">函館朝市</a> (釣烏賊、村上海膽)</li>
-                <li><i class="fas fa-star"></i> 中午：<a class="location-link" href="https://maps.app.goo.gl/mPjV6XQZf4Z7f8v9" target="_blank">五稜郭塔</a> ＆ <a class="location-link" href="https://maps.app.goo.gl/3fXQZf4Z7f8v9" target="_blank">六花亭五稜郭店</a></li>
-                <li><i class="fas fa-leaf"></i> 傍晚：<a class="location-link" href="https://maps.app.goo.gl/E8Wf9P3U4Z7f8v9" target="_blank">香雪園(見晴公園)</a> <span class="tag">夜楓點燈</span></li>
-            </ul>
+        <div class="content">
+            <div class="spot">
+                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1542044896530-05d85be9b11a?auto=format&fit=crop&w=200&q=80')"></div>
+                <div class="spot-detail">
+                    <h3>五稜郭公園 & 六花亭</h3>
+                    <p>登上塔頂俯瞰楓紅交織的五角星，接著在六花亭享受玻璃屋下午茶。</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Goryokaku+Tower" target="_blank" class="btn-map"><i class="fas fa-map"></i> 五稜郭塔</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=六花亭+五稜郭店" target="_blank" class="btn-map"><i class="fas fa-map"></i> 六花亭</a>
+                </div>
+            </div>
+            <div class="spot">
+                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80')"></div>
+                <div class="spot-detail">
+                    <h3>香雪園 (見晴公園)</h3>
+                    <p>北海道唯一文化財庭園，欣賞令人屏息的 MOMI-G 節夜楓點燈。</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Kosyetsuen+Miharashi+Park" target="_blank" class="btn-map"><i class="fas fa-location-dot"></i> 前往香雪園</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="day-card">
-        <div class="day-header">
-            <h2>Day 3：浪漫花火之夜</h2>
+    <div class="day-section">
+        <div class="day-banner" style="background: linear-gradient(135deg, #2c3e50, #2980B9);">
+            <h2>Day 3 洞爺湖花火</h2>
             <span>10/25 (日)</span>
         </div>
-        <div class="day-content">
-            <div class="accommodation">
-                🏠 入住：<a class="location-link" href="https://maps.app.goo.gl/N8XQZf4Z7f8v9" target="_blank">洞爺湖 乃之風度假酒店</a>
+        <div class="content">
+            <div class="stay-info">
+                <i class="fas fa-hot-tub-person"></i>
+                <div>
+                    <strong>入住：洞爺湖 乃之風度假酒店</strong><br>
+                    <a href="https://www.google.com/maps/search/?api=1&query=The+Lake+view+TOYA+Nonokaze+Resort" target="_blank" class="btn-map"><i class="fas fa-location-dot"></i> 飯店導航</a>
+                </div>
             </div>
-            <ul>
-                <li><i class="fas fa-store"></i> 早上：<a class="location-link" href="https://maps.app.goo.gl/r5T5S7XQZf4Z7f8v9" target="_blank">金森紅磚倉庫</a> 散步</li>
-                <li><i class="fas fa-car"></i> 中午：移動至洞爺湖 (自駕/接送)</li>
-                <li><i class="fas fa-firework"></i> 晚上：20:45 <a class="location-link" href="https://maps.app.goo.gl/q8P3U4Z7f8v9" target="_blank">洞爺湖花火大會</a></li>
-            </ul>
+            <div class="spot">
+                <div class="spot-detail">
+                    <h3>✨ 20:45 洞爺湖煙火大會</h3>
+                    <p>在房間或頂露天風呂，欣賞年度最後的湖面花火，感受極致浪漫。</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="day-card">
-        <div class="day-header">
-            <h2>Day 4：有珠火山與秋色</h2>
-            <span>10/26 (一)</span>
+    <div class="day-section">
+        <div class="day-banner" style="background: linear-gradient(135deg, var(--gold), var(--deep-orange));">
+            <h2>Day 4-5 湖光山色</h2>
+            <span>10/26-27</span>
         </div>
-        <div class="day-content">
-            <div class="accommodation">🏠 入住：洞爺湖 乃之風</div>
-            <ul>
-                <li><i class="fas fa-mountain"></i> 中午：<a class="location-link" href="https://maps.app.goo.gl/f8Wf9P3U4Z7f8v9" target="_blank">有珠山纜車</a> ＆ <a class="location-link" href="https://maps.app.goo.gl/w8XQZf4Z7f8v9" target="_blank">昭和新山</a></li>
-                <li><i class="fas fa-walking"></i> 下午：<a class="location-link" href="https://maps.app.goo.gl/z8P3U4Z7f8v9" target="_blank">洞爺湖畔雕刻公園</a> 散步拍照</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="day-card">
-        <div class="day-header">
-            <h2>Day 5：展望全景．鑽石夜景</h2>
-            <span>10/27 (二)</span>
-        </div>
-        <div class="day-content">
-            <div class="accommodation">🏠 入住：OMO5 函館</div>
-            <ul>
-                <li><i class="fas fa-camera"></i> 早上：<a class="location-link" href="https://maps.app.goo.gl/a8XQZf4Z7f8v9" target="_blank">筒倉展望台 (Silo)</a></li>
-                <li><i class="fas fa-ice-cream"></i> 中午：<a class="location-link" href="https://maps.app.goo.gl/b8P3U4Z7f8v9" target="_blank">Lake Hill Farm</a> 義式冰淇淋</li>
-                <li><i class="fas fa-moon"></i> 晚上：<a class="location-link" href="https://maps.app.goo.gl/c8Wf9P3U4Z7f8v9" target="_blank">函館山夜景</a> (建議日落前抵達)</li>
-            </ul>
+        <div class="content">
+            <div class="spot">
+                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=200&q=80')"></div>
+                <div class="spot-detail">
+                    <h3>有珠山纜車 & Lake Hill Farm</h3>
+                    <p>俯瞰火山壯麗奇景，下午在絕美草皮享用手工 Gelato。</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Mt+Usu+Ropeway" target="_blank" class="btn-map"><i class="fas fa-map"></i> 纜車站</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Lake+Hill+Farm" target="_blank" class="btn-map"><i class="fas fa-map"></i> 冰淇淋農場</a>
+                </div>
+            </div>
+            <div class="spot">
+                <div class="spot-img" style="background-image: url('https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=200&q=80')"></div>
+                <div class="spot-detail">
+                    <h3>函館山百萬鑽石夜景</h3>
+                    <p>重返函館，搭乘纜車登上頂峰，飽覽世界三大夜景之一。</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Mt+Hakodate+Ropeway" target="_blank" class="btn-map"><i class="fas fa-location-dot"></i> 纜車站入口</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="day-card">
-        <div class="day-header">
-            <h2>Day 6：異國風情．賦歸</h2>
+    <div class="day-section">
+        <div class="day-banner">
+            <h2>Day 6 歲月靜好．賦歸</h2>
             <span>10/28 (三)</span>
         </div>
-        <div class="day-content">
-            <ul>
-                <li><i class="fas fa-camera-retro"></i> 早上：<a class="location-link" href="https://maps.app.goo.gl/d8XQZf4Z7f8v9" target="_blank">元町區散步</a> (八幡坂、大三坂)</li>
-                <li><i class="fas fa-shopping-bag"></i> 下午：15:30 抵達 <a class="location-link" href="https://maps.app.goo.gl/e8P3U4Z7f8v9" target="_blank">函館機場</a></li>
-                <li><i class="fas fa-plane-departure"></i> 18:00 飛機起飛返台</li>
-            </ul>
+        <div class="content">
+            <div class="spot">
+                <div class="spot-detail">
+                    <h3>元町區散策 (八幡坂)</h3>
+                    <p>在最美街道拍下通往大海的風景，為旅程畫下完美句點。</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Hachiman-zaka+Slope" target="_blank" class="btn-map"><i class="fas fa-map"></i> 八幡坂</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Hakodate+Airport" target="_blank" class="btn-map"><i class="fas fa-plane"></i> 函館機場</a>
+                </div>
+            </div>
         </div>
     </div>
 
 </div>
 
 <footer>
-    <p>🍁 Wish you a colorful autumn journey 🍁</p>
+    <p>🍁 一場關於秋天的慢活紀錄 🍁</p>
 </footer>
 
 </body>
